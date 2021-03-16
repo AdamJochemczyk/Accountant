@@ -2,11 +2,16 @@ import React from 'react';
 import './App.css';
 import {Navbar} from './components';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import GlobalStyles from './index.css';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import {NewBill} from './components';
 
 function App() {
   return (
     <div className="App">
       <Router>
+      <GlobalStyles/>
+      <React.Suspense fallback={CircularProgress}>
       <Navbar items={[
         {content: 'Home',to:'/'},
         {content: 'Bills',to:'/new-bill'},
@@ -20,7 +25,7 @@ function App() {
           <h2>In progress</h2>
         </Route>
         <Route path='/new-bill'>
-          Bills
+          <NewBill/>
         </Route>
         <Route path='/new-invoice'>
           Invoice
@@ -35,7 +40,7 @@ function App() {
           Settings
         </Route>
       </Switch>
-
+      </React.Suspense>
       </Router>
     </div>
   );
