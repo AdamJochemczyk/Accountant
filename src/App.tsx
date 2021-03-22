@@ -4,7 +4,7 @@ import {Navbar} from './components';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import GlobalStyles from './index.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { NewBill, NewInvoice } from "./components";
+import { NewBill, NewInvoice,SettingsPage } from "./components";
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
               <NewInvoice/>
             </Route>
             <Route path="/documents">Documents</Route>
-            <Route path="/settings">Settings</Route>
+            <Route path="/settings"><SettingsPage/></Route>
             <Route>
               <p>Not found</p>
             </Route>

@@ -30,7 +30,7 @@ const PrepaymentInvoice = ({ onSubmit }) => {
             <Field
               name={`prepayment`}
               type="text"
-              className={errors.prepayment && "error__field"}
+              className={errors.prepayment && touched.prepayment && "error__field"}
             />
             <ErrorMessage
               name={`prepayment`}

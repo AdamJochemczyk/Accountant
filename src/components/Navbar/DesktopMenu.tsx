@@ -16,7 +16,7 @@ const DesktopMenu: FunctionComponent<NavbarProps & { className: string }> = ({
       <Toolbar>
         {items.map(({ content, to }) => (
           <Link key={to} to={to} className={className}>
-            <Button primary>{content}</Button>
+            <Button right={1} primary>{content}</Button>
           </Link>
         ))}
       </Toolbar>

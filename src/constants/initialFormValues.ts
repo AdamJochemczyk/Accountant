@@ -1,5 +1,30 @@
-export const initialPrepaymentInvoice = {
-    seller: {
+interface ISeller{
+  seller:{
+    name:string,
+    address:string,
+    NIP:string,
+  }
+}
+
+interface IBuyer{
+  buyer: {
+      name: string,
+      address: string,
+      NIP: string,
+    }
+}
+
+interface IProducts{
+  numberOfProducts: string,
+  products: Array<Object>,
+}
+
+interface IPrepaymentInvoice extends IBuyer,ISeller{
+    prepayment: string,
+}
+
+export const initialPrepaymentInvoice:IPrepaymentInvoice = {
+    seller:{
       name: "",
       address: "",
       NIP: "",
@@ -12,7 +37,9 @@ export const initialPrepaymentInvoice = {
     prepayment: "",
   };
 
-export const initialInvoice = {
+interface IinitialInvoice extends ISeller,IBuyer,IProducts{}
+
+export const initialInvoice:IinitialInvoice = {
     seller: {
       name: "",
       address: "",
@@ -23,12 +50,13 @@ export const initialInvoice = {
       address: "",
       NIP: "",
     },
-    NIP: "",
     numberOfProducts: "",
     products: [],
   };
+
+interface IinitialBill extends ISeller,IProducts{}
   
-export const initialBill = {
+export const initialBill:IinitialBill = {
     numberOfProducts: "",
     products: [],
     seller: {
@@ -37,3 +65,16 @@ export const initialBill = {
     NIP: "",
     }
   };
+
+interface IcompanyInitialData extends ISeller{
+  accountNumber:string,
+}
+
+export const companyInitialData:IcompanyInitialData={
+  seller: {
+      name: "",
+      address: "",
+      NIP: "",
+    },
+  accountNumber: "",
+}
