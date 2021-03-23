@@ -40,11 +40,6 @@ const InvoiceForm = ({ onSubmit }) => {
           <div>
             <p>TOTAL AMOUNT:</p>
           </div>
-          <Box display="flex">
-            <p>Bill number/report number</p>
-            <p>Cash register ID</p>
-            <p>Number and cashier name</p>
-          </Box>
           <Box display="flex" justifyContent="space-between">
             <Button type="submit">Generate Invoice</Button>
             <Button type="reset">Reset</Button>

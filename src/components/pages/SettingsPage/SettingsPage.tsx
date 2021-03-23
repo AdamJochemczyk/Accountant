@@ -6,6 +6,9 @@ import {Button,SellerInputForm} from '../../index';
 import { companyInitialData, companyDataValidator } from "../../../constants";
 
 const SettingsPage = () => {
+  function onSubmit(fields){
+    alert(JSON.stringify(fields, null, 4));
+  }
   return (
     <Box display="flex" justifyContent="center" m={3}>
       <Paper elevation={3}>
@@ -13,7 +16,7 @@ const SettingsPage = () => {
           <Formik
             initialValues={companyInitialData}
             validationSchema={companyDataValidator}
-            onSubmit={() => {}}
+            onSubmit={onSubmit}
           >
             {({ errors, touched }) => (
               <Form>
@@ -28,12 +31,23 @@ const SettingsPage = () => {
                   <Field
                     name={`accountNumber`}
                     type="text"
-                    className={errors.accountNumber && "error_field"}
+                    className={errors.accountNumber && "error__field"}
                   />
                   <ErrorMessage
                     name={`accountNumber`}
                     component="div"
-                    className="error_text"
+                    className="error__text"
+                  />
+                  <label>Payment method</label>
+                  <Field
+                    name={`paymentMethod`}
+                    type="text"
+                    className={errors.paymentMethod && "error__field"}
+                  />
+                  <ErrorMessage
+                    name={`paymentMethod`}
+                    component="div"
+                    className="error__text"
                   />
                 </Box>
                 <Button top={1} type="submit">

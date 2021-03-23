@@ -1,4 +1,4 @@
-interface ISeller{
+export interface ISeller{
   seller:{
     name:string,
     address:string,
@@ -66,8 +66,9 @@ export const initialBill:IinitialBill = {
     }
   };
 
-interface IcompanyInitialData extends ISeller{
-  accountNumber:string,
+interface IcompanyInitialData extends ISeller {
+  accountNumber: string;
+  paymentMethod:string;
 }
 
 export const companyInitialData:IcompanyInitialData={
@@ -77,4 +78,5 @@ export const companyInitialData:IcompanyInitialData={
       NIP: "",
     },
   accountNumber: "",
+  paymentMethod:"",
 }

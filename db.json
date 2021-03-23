@@ -1,0 +1,75 @@
+{
+    "bills":[
+        {
+            "billNumber": 1,
+            "numberOfProducts": "1",
+            "products": [
+            { 
+                "name": "Sok",
+                "amount": 2,
+                "tax": 23,
+                "price": 10
+            }
+        ],
+            "seller":{
+                "name": "Adamiec Sp. z o. o.",
+                "address": "Wlokiennicza 2 Katowice",
+                "NIP": "132-11-23-33-12"
+            },
+            "date": "27-10-2020",
+            "total-amount":"20",
+            "cashRegisterID": "1234",
+            "NumberOfCashier": "1",
+            "CashierName": "SZEF" 
+        }
+    ],
+    "prepaymentInvoices":[
+        {
+            "prepaymentNumber": "1",
+            "seller":{
+                "name": "Adamiec Sp. z o. o.",
+                "address": "Wlokiennicza 2 Katowice",
+                "NIP": "132-11-23-33-12"
+            },
+            "buyer":{
+                "name": "Sebex Sp. z o. o.",
+                "address": "Jastrowa 2 Warszawa",
+                "NIP": "132-88-23-33-12"
+            },
+            "paymentMethod": "transfer",
+            "accountNumber": "2213546486222",
+            "prepaymentAmount": "1000"
+        }
+    ],
+    "invoices":{
+        "seller":{
+                "name": "Adamiec Sp. z o. o.",
+                "address": "Wlokiennicza 2 Katowice",
+                "NIP": "132-11-23-33-12"
+            },
+            "buyer":{
+                "name": "Sebex Sp. z o. o.",
+                "address": "Jastrowa 2 Warszawa",
+                "NIP": "132-88-23-33-12"
+            },
+            "paymentMethod": "transfer",
+            "accountNumber": "2213546486222",
+            "numberOfProducts": "1",
+            "products":[
+                {
+                    "name": "Pierogi",
+                    "amount": 2,
+                    "tax": 23,
+                    "price": 15
+                }
+            ],
+            "totalAmount": "30"
+    },
+    "companyData":{
+        "name":"Adamiec Sp. z o. o.",
+        "address":"Wlokiennicza 2 Katowice",
+        "NIP":"132-11-23-33-12",
+        "accountNumber": "2213546486222",
+        "paymentMethod":"transfer"
+    }
+}

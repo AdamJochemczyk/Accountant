@@ -8,7 +8,7 @@ const NewInvoice = () => {
   const [type,setType] = useState("normal");
 
   useEffect(() => {
-    setType("prepayment");
+    setType("normal");
     //get from store
   }, [type])
 
