@@ -19,6 +19,7 @@
     "@types/yup": "^0.29.11",
     "formik": "^2.2.6",
     "json-server": "^0.16.3",
+    "json-server-auth": "^2.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-query": "^3.13.0",
@@ -40,7 +41,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:db": "json-server --watch db.json --middlewares ./src/db-middleware.js --port 3001"
+    "start:db": "json-server-auth db.json -r routes.json --port 3001"
   },
   "eslintConfig": {
     "extends": [

@@ -1,75 +1,139 @@
 {
-    "bills":[
-        {
-            "billNumber": 1,
-            "numberOfProducts": "1",
-            "products": [
-            { 
-                "name": "Sok",
-                "amount": 2,
-                "tax": 23,
-                "price": 10
-            }
-        ],
-            "seller":{
-                "name": "Adamiec Sp. z o. o.",
-                "address": "Wlokiennicza 2 Katowice",
-                "NIP": "132-11-23-33-12"
-            },
-            "date": "27-10-2020",
-            "total-amount":"20",
-            "cashRegisterID": "1234",
-            "NumberOfCashier": "1",
-            "CashierName": "SZEF" 
-        }
-    ],
-    "prepaymentInvoices":[
-        {
-            "prepaymentNumber": "1",
-            "seller":{
-                "name": "Adamiec Sp. z o. o.",
-                "address": "Wlokiennicza 2 Katowice",
-                "NIP": "132-11-23-33-12"
-            },
-            "buyer":{
-                "name": "Sebex Sp. z o. o.",
-                "address": "Jastrowa 2 Warszawa",
-                "NIP": "132-88-23-33-12"
-            },
-            "paymentMethod": "transfer",
-            "accountNumber": "2213546486222",
-            "prepaymentAmount": "1000"
-        }
-    ],
-    "invoices":{
-        "seller":{
-                "name": "Adamiec Sp. z o. o.",
-                "address": "Wlokiennicza 2 Katowice",
-                "NIP": "132-11-23-33-12"
-            },
-            "buyer":{
-                "name": "Sebex Sp. z o. o.",
-                "address": "Jastrowa 2 Warszawa",
-                "NIP": "132-88-23-33-12"
-            },
-            "paymentMethod": "transfer",
-            "accountNumber": "2213546486222",
-            "numberOfProducts": "1",
-            "products":[
-                {
-                    "name": "Pierogi",
-                    "amount": 2,
-                    "tax": 23,
-                    "price": 15
-                }
-            ],
-            "totalAmount": "30"
+  "users": [
+    {
+      "email": "test@test.pl",
+      "password": "$2a$10$nJQ.JtvwlNGODH75UIodku6DGoN4HkbZynqy33s7IuQ6wnJMK3h2G",
+      "id": 1
     },
-    "companyData":{
-        "name":"Adamiec Sp. z o. o.",
-        "address":"Wlokiennicza 2 Katowice",
-        "NIP":"132-11-23-33-12",
-        "accountNumber": "2213546486222",
-        "paymentMethod":"transfer"
+    {
+      "email": "test2@test.pl",
+      "password": "$2a$10$8PUpg5Pt8tzXXmunpDQp2.I1Ybtl0JhfxxfLzqCRYUK9pqTxljINy",
+      "id": 2
     }
+  ],
+  "bills": [
+    {
+      "billNumber": 1,
+      "numberOfProducts": "1",
+      "products": [
+        {
+          "name": "Sok",
+          "amount": 2,
+          "tax": 23,
+          "price": 10
+        }
+      ],
+      "seller": {
+        "name": "Adamiec Sp. z o. o.",
+        "address": "Wlokiennicza 2 Katowice",
+        "NIP": "132-11-23-33-12"
+      },
+      "date": "27-10-2020",
+      "total-amount": "20",
+      "cashRegisterID": "1234",
+      "NumberOfCashier": "1",
+      "CashierName": "SZEF"
+    },
+    {
+      "id": 2,
+      "billNumber": 2,
+      "numberOfProducts": "2",
+      "products": [
+        {
+          "name": "Sok",
+          "amount": 2,
+          "tax": 23,
+          "price": 10
+        },
+        {
+          "name": "Czosnek",
+          "amount": 2,
+          "tax": 23,
+          "price": 10
+        }
+      ],
+      "seller": {
+        "name": "Adamiec Sp. z o. o.",
+        "address": "Wlokiennicza 2 Katowice",
+        "NIP": "132-11-23-33-12"
+      },
+      "date": "27-10-2020",
+      "total-amount": "40",
+      "cashRegisterID": "1234",
+      "NumberOfCashier": "1",
+      "CashierName": "SZEF"
+    },
+    {
+      "billNumber": 1,
+      "numberOfProducts": "1",
+      "products": [
+        {
+          "name": "Sok",
+          "amount": 2,
+          "tax": 23,
+          "price": 10
+        }
+      ],
+      "seller": {
+        "name": "Adamiec Sp. z o. o.",
+        "address": "Wlokiennicza 2 Katowice",
+        "NIP": "132-11-23-33-12"
+      },
+      "date": "27-10-2020",
+      "total-amount": "20",
+      "cashRegisterID": "1234",
+      "NumberOfCashier": "1",
+      "CashierName": "SZEF",
+      "id": 3
+    }
+  ],
+  "prepaymentInvoices": [
+    {
+      "prepaymentNumber": "1",
+      "seller": {
+        "name": "Adamiec Sp. z o. o.",
+        "address": "Wlokiennicza 2 Katowice",
+        "NIP": "132-11-23-33-12"
+      },
+      "buyer": {
+        "name": "Sebex Sp. z o. o.",
+        "address": "Jastrowa 2 Warszawa",
+        "NIP": "132-88-23-33-12"
+      },
+      "paymentMethod": "transfer",
+      "accountNumber": "2213546486222",
+      "prepaymentAmount": "1000"
+    }
+  ],
+  "invoices": {
+    "seller": {
+      "name": "Adamiec Sp. z o. o.",
+      "address": "Wlokiennicza 2 Katowice",
+      "NIP": "132-11-23-33-12"
+    },
+    "buyer": {
+      "name": "Sebex Sp. z o. o.",
+      "address": "Jastrowa 2 Warszawa",
+      "NIP": "132-88-23-33-12"
+    },
+    "paymentMethod": "transfer",
+    "accountNumber": "2213546486222",
+    "numberOfProducts": "1",
+    "products": [
+      {
+        "name": "Pierogi",
+        "amount": 2,
+        "tax": 23,
+        "price": 15
+      }
+    ],
+    "totalAmount": "30"
+  },
+  "companyData": {
+    "name": "Adamiec Sp. z o. o.",
+    "address": "Wlokiennicza 3 Katowice",
+    "NIP": "132-11-23-33-12",
+    "accountNumber": "2213546486222",
+    "paymentMethod": "transfer"
+  }
 }
