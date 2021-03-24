@@ -71,3 +71,8 @@ export const validationBill = Yup.object().shape({
   ...sellerValidator.fields,
   ...productsValidator.fields,
 });
+
+export const validationLogin = Yup.object().shape({
+  email: Yup.string().required("Email is required"),
+  password: Yup.string().required("Password is required"),
+})

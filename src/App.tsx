@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
-import {Navbar} from './components';
+import {Navbar,Login} from './components';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import GlobalStyles from './index.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { NewBill, NewInvoice,SettingsPage } from "./components";
+import { NewBill, NewInvoice,SettingsPage,Documents } from "./components";
+import { toast } from "react-toastify";
+import ProtectedRoute from './components/ProtectedRoute';
+
+toast.configure();
 
 function App() {
   return (
@@ -23,16 +27,15 @@ function App() {
           />
           <Switch>
             <Route exact path="/">
-              <h2>In progress</h2>
+              <Login />
             </Route>
-            <Route path="/new-bill">
-              <NewBill />
+            <Route exact path="/login">
+              <Login />
             </Route>
-            <Route path="/new-invoice">
-              <NewInvoice/>
-            </Route>
-            <Route path="/documents">Documents</Route>
-            <Route path="/settings"><SettingsPage/></Route>
+            <ProtectedRoute path="/new-bill" component={NewBill} />
+            <ProtectedRoute path="/new-invoice" component={NewInvoice} />
+            <ProtectedRoute path="/documents" component={Documents} />
+            <ProtectedRoute path="/settings" component={SettingsPage} />
             <Route>
               <p>Not found</p>
             </Route>

@@ -8,3 +8,5 @@ export {default as SellerInputForm} from './SellerInputForm';
 export {default as DynamicProductInputs} from './DynamicProductInputs';
 export {default as BuyerInputForm} from './BuyerInputForm';
 export {default as SettingsPage} from './pages/SettingsPage';
+export {default as Login} from './pages/Login';
+export {default as Documents} from './pages/Documents';
