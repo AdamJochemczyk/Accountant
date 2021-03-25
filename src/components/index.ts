@@ -10,3 +10,4 @@ export {default as BuyerInputForm} from './BuyerInputForm';
 export {default as SettingsPage} from './pages/SettingsPage';
 export {default as Login} from './pages/Login';
 export {default as Documents} from './pages/Documents';
+export {default as FinalInvoice } from "./pages/FinalInvoice";

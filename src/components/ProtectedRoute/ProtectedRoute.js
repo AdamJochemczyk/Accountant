@@ -3,10 +3,10 @@ import { Redirect, Route } from "react-router";
 import { getCookie } from "../../constants";
 
 const isAuthenticated = () => {
-  if (getCookie("token") !== null || getCookie("token") !== undefined) {
-    return true;
-  } else {
+  if (getCookie("token") === null || getCookie("token") === undefined) {
     return false;
+  } else {
+    return true;
   }
 };
 

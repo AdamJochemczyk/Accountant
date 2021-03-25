@@ -4,7 +4,7 @@ import {Navbar,Login} from './components';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import GlobalStyles from './index.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { NewBill, NewInvoice,SettingsPage,Documents } from "./components";
+import { NewBill, NewInvoice,SettingsPage,Documents,FinalInvoice } from "./components";
 import { toast } from "react-toastify";
  import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoute from './components/ProtectedRoute';
@@ -37,6 +37,7 @@ function App() {
             <ProtectedRoute path="/new-invoice" component={NewInvoice} />
             <ProtectedRoute path="/documents" component={Documents} />
             <ProtectedRoute path="/settings" component={SettingsPage} />
+            <ProtectedRoute path="/final-invoice" component={FinalInvoice} />
             <Route>
               <p>Not found</p>
             </Route>
