@@ -4,7 +4,7 @@ import {
   UPDATE_VALUES_IN_DB,
 } from "../constants";
 
-const initialState = {
+const companydata = {
   seller: {
     name: "",
     address: "",
@@ -14,20 +14,18 @@ const initialState = {
   paymentMethod: "",
 };
 
-function companyData(state = initialState, action) {
+function companyData(state = companydata, action) {
   switch (action.type) {
     case SET_DEFAULT_VALUES:
       return {
-        initialState,
+        companydata,
       };
     case GET_VALUES_FROM_DB:
       return {
-        ...state,
         ...action.payload,
       };
     case UPDATE_VALUES_IN_DB:
       return {
-        ...state,
         ...action.payload,
       };
     default:

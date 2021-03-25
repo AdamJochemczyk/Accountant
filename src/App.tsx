@@ -6,6 +6,7 @@ import GlobalStyles from './index.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { NewBill, NewInvoice,SettingsPage,Documents } from "./components";
 import { toast } from "react-toastify";
+ import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoute from './components/ProtectedRoute';
 
 toast.configure();

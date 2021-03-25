@@ -3,25 +3,28 @@ import { Formik, Form } from "formik";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import {initialBill,validationBill} from '../../../constants';
+import {connect} from "react-redux";
 import {
   SellerInputForm,
   Button,
   DynamicProductInputs,
 } from "../../../components";
+import {
+  fetchCompanyData,
+} from "../../../data/actions/companyData.actions";
+import {useNewBill} from './useNewBill'
 
-const NewBill = () => {
+const NewBill = ({ fetchCompanyData }) => {
 
-  function onSubmit(fields) {
-    // display form field values on success
-    alert("SUCCESS!! :-)\n\n" + JSON.stringify(fields, null, 4));
-  }
+  const {onSubmit,companyData}=useNewBill({fetchCompanyData,initialBill})
 
   return (
     <Box display="flex" justifyContent="center" m={3}>
       <Paper elevation={3}>
         <Box p={1}>
           <Formik
-            initialValues={initialBill}
+            initialValues={{...initialBill,...companyData}}
+            enableReinitialize
             validationSchema={validationBill}
             onSubmit={onSubmit}
           >
@@ -34,7 +37,12 @@ const NewBill = () => {
                   <p>Print number</p>
                 </Box>
                 <p>BILL</p>
-                <DynamicProductInputs values={values} setValues={setValues} errors={errors} touched={touched} />
+                <DynamicProductInputs
+                  values={values}
+                  setValues={setValues}
+                  errors={errors}
+                  touched={touched}
+                />
                 <div>
                   <p>TOTAL AMOUNT:</p>
                 </div>
@@ -55,4 +63,8 @@ const NewBill = () => {
     </Box>
   );
 };
-export default NewBill;
+export default connect(null, (dispatch) => {
+  return {
+    fetchCompanyData,
+  };
+})(NewBill);

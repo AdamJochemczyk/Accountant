@@ -85,6 +85,63 @@
       "NumberOfCashier": "1",
       "CashierName": "SZEF",
       "id": 3
+    },
+    {
+      "numberOfProducts": "1",
+      "products": [
+        {
+          "name": "aaa",
+          "amount": "2",
+          "tax": "23",
+          "price": "1"
+        }
+      ],
+      "seller": {
+        "name": "Adamiec Sp. z o.o.",
+        "address": "233",
+        "NIP": "123"
+      },
+      "accountNumber": "12345",
+      "paymentMethod": "transfer",
+      "id": 4
+    },
+    {
+      "numberOfProducts": "1",
+      "products": [
+        {
+          "name": "bbb",
+          "amount": "2",
+          "tax": "23",
+          "price": "1"
+        }
+      ],
+      "seller": {
+        "name": "Adamiec Sp. z o.o.",
+        "address": "233",
+        "NIP": "123"
+      },
+      "accountNumber": "12345",
+      "paymentMethod": "transfer",
+      "id": 5
+    },
+    {
+      "numberOfProducts": "1",
+      "products": [
+        {
+          "name": "ccc",
+          "amount": "2",
+          "tax": "23",
+          "price": "1"
+        }
+      ],
+      "seller": {
+        "name": "Adamiec Sp. z o.o.",
+        "address": "233",
+        "NIP": "123"
+      },
+      "accountNumber": "12345",
+      "paymentMethod": "transfer",
+      "id": 6
     }
   ],
   "prepaymentInvoices": [
