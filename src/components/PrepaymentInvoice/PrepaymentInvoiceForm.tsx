@@ -3,12 +3,21 @@ import Box from "@material-ui/core/Box";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Button, SellerInputForm,BuyerInputForm } from "../index";
 import {validationPrepaymentInvoice,initialPrepaymentInvoice} from '../../constants'
+import { fetchCompanyData } from "../../data/actions/companyData.actions";
+import {connect} from 'react-redux';
+import {usePrepaymentInvoiceForm} from './usePrepaymentInvoiceForm';
 
-const PrepaymentInvoice = ({ onSubmit }) => {
+const PrepaymentInvoice = ({ fetchCompanyData }) => {
+  
+  const { onSubmit, companyData } = usePrepaymentInvoiceForm({
+    fetchCompanyData,
+    initialPrepaymentInvoice,
+  });
 
   return (
     <Formik
-      initialValues={initialPrepaymentInvoice}
+      initialValues={{...initialPrepaymentInvoice,...companyData}}
+      enableReinitialize
       validationSchema={validationPrepaymentInvoice}
       onSubmit={onSubmit}
     >
@@ -30,7 +39,9 @@ const PrepaymentInvoice = ({ onSubmit }) => {
             <Field
               name={`prepayment`}
               type="text"
-              className={errors.prepayment && touched.prepayment && "error__field"}
+              className={
+                errors.prepayment && touched.prepayment && "error__field"
+              }
             />
             <ErrorMessage
               name={`prepayment`}
@@ -48,4 +59,8 @@ const PrepaymentInvoice = ({ onSubmit }) => {
   );
 };
 
-export default PrepaymentInvoice
+export default connect(null, (dispatch) => {
+  return {
+    fetchCompanyData,
+  };
+})(PrepaymentInvoice);

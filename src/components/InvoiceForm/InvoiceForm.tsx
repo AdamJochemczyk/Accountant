@@ -8,11 +8,17 @@ import {
 } from "../index";
 import Box from "@material-ui/core/Box";
 import { initialInvoice, validationInvoice } from "../../constants";
+import { connect } from "react-redux";
+import { fetchCompanyData } from "../../data/actions/companyData.actions";
+import {useInvoiceForm} from './useInvoiceForm';
 
-const InvoiceForm = ({ onSubmit }) => {
+const InvoiceForm = ({ fetchCompanyData }) => {
+  const { onSubmit,companyData } = useInvoiceForm({fetchCompanyData, initialInvoice});
+
   return (
     <Formik
-      initialValues={initialInvoice}
+      initialValues={{...initialInvoice,...companyData}}
+      enableReinitialize
       validationSchema={validationInvoice}
       onSubmit={onSubmit}
     >
@@ -50,4 +56,10 @@ const InvoiceForm = ({ onSubmit }) => {
   );
 };
 
-export default InvoiceForm;
+export default connect(
+  null,
+  (dispatch)=>{
+    return{
+      fetchCompanyData
+    }
+  })(InvoiceForm);
