@@ -78,7 +78,7 @@ export const companyInitialData: IcompanyInitialData = {
     NIP: "",
   },
   accountNumber: "",
-  paymentMethod: "",
+  paymentMethod: "transfer",
 };
 
 interface IloginInitialData {

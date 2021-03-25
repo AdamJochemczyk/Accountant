@@ -56,7 +56,11 @@ const SellerInputForm = ({ errors, touched }) => {
             "error__field"
           }
         />
-        <ErrorMessage name={`seller.NIP`} component="div" className="error__text" />
+        <ErrorMessage
+          name={`seller.NIP`}
+          component="div"
+          className="error__text"
+        />
       </Box>
     </>
   );

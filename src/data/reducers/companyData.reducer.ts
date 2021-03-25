@@ -11,6 +11,7 @@ const initialState = {
     NIP: "",
   },
   accountNumber: "",
+  paymentMethod: "",
 };
 
 function companyData(state = initialState, action) {
@@ -22,12 +23,12 @@ function companyData(state = initialState, action) {
     case GET_VALUES_FROM_DB:
       return {
         ...state,
-        seller: action.payload,
+        ...action.payload,
       };
     case UPDATE_VALUES_IN_DB:
       return {
         ...state,
-        seller: action.payload,
+        ...action.payload,
       };
     default:
       return state;

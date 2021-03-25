@@ -2,19 +2,30 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
-import {Button,SellerInputForm} from '../../index';
+import { Button, SellerInputForm } from "../../index";
 import { companyInitialData, companyDataValidator } from "../../../constants";
+import { connect } from "react-redux";
+import {
+  updateCompanyData,
+  fetchCompanyData,
+} from "../../../data/actions/companyData.actions";
+import {useSettingsPage} from './useSettingsPage';
 
-const SettingsPage = () => {
-  function onSubmit(fields){
-    alert(JSON.stringify(fields, null, 4));
-  }
+const SettingsPage = ({ updateCompanyData, fetchCompanyData }) => {
+
+  const {onSubmit,companyData} = useSettingsPage(
+    {updateCompanyData,
+    fetchCompanyData,
+    companyInitialData}
+  )
+
   return (
     <Box display="flex" justifyContent="center" m={3}>
       <Paper elevation={3}>
         <Box p={1}>
           <Formik
-            initialValues={companyInitialData}
+            initialValues={{companyInitialData,...companyData}}
+            enableReinitialize
             validationSchema={companyDataValidator}
             onSubmit={onSubmit}
           >
@@ -31,7 +42,11 @@ const SettingsPage = () => {
                   <Field
                     name={`accountNumber`}
                     type="text"
-                    className={errors.accountNumber && "error__field"}
+                    className={
+                      errors.accountNumber &&
+                      touched.accountNumber &&
+                      "error__field"
+                    }
                   />
                   <ErrorMessage
                     name={`accountNumber`}
@@ -39,11 +54,10 @@ const SettingsPage = () => {
                     className="error__text"
                   />
                   <label>Payment method</label>
-                  <Field
-                    name={`paymentMethod`}
-                    type="text"
-                    className={errors.paymentMethod && "error__field"}
-                  />
+                  <Field as="select" name="paymentMethod">
+                    <option value="transfer">Transfer</option>
+                    <option value="cash">Cash</option>
+                  </Field>
                   <ErrorMessage
                     name={`paymentMethod`}
                     component="div"
@@ -57,9 +71,26 @@ const SettingsPage = () => {
             )}
           </Formik>
         </Box>
+        <Box>
+          <h4>Current company data:</h4>
+          {companyData &&
+            <>
+              <p>Name: {companyData.seller.name}</p>
+              <p>Address: {companyData.seller.address}</p>
+              <p>NIP: {companyData.seller.NIP}</p>
+              <p>Account number: {companyData.accountNumber}</p>
+              <p>Payment method: {companyData.paymentMethod}</p>
+            </>
+          }
+        </Box>
       </Paper>
     </Box>
   );
 };
 
-export default SettingsPage;
+export default connect(null, (dispatch) => {
+  return {
+    updateCompanyData,
+    fetchCompanyData,
+  };
+})(SettingsPage);

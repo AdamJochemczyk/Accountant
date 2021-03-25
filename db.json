@@ -130,10 +130,21 @@
     "totalAmount": "30"
   },
   "companyData": {
-    "name": "Adamiec Sp. z o. o.",
-    "address": "Wlokiennicza 3 Katowice",
-    "NIP": "132-11-23-33-12",
-    "accountNumber": "2213546486222",
-    "paymentMethod": "transfer"
+    "companyInitialData": {
+      "seller": {
+        "name": "",
+        "address": "",
+        "NIP": ""
+      },
+      "accountNumber": "",
+      "paymentMethod": "transfer"
+    },
+    "seller": {
+      "name": "Adamiec Sp. z o.o.",
+      "address": "233",
+      "NIP": "123"
+    },
+    "accountNumber": "12345",
+    "paymentMethod": "cash"
   }
 }

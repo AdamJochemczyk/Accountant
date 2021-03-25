@@ -26,7 +26,6 @@ const Login = () => {
             const data=await response.json();
             setWait(false);
             if (data.hasOwnProperty("accessToken")) {
-                console.log(data.accessToken);
                 setCookie("token",data.accessToken);
                 history.push('/documents')
             } else {
