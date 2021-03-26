@@ -19,3 +19,6 @@ Inside it you can set a company data which is pass through forms to write less d
 
 ## Screenshots
 
+![image](https://user-images.githubusercontent.com/27738556/112613900-ee1e6880-8e20-11eb-8981-c1a7c8ac453e.png)
+![image](https://user-images.githubusercontent.com/27738556/112614202-46556a80-8e21-11eb-9176-09ac65902ea7.png)
+![image](https://user-images.githubusercontent.com/27738556/112614242-51a89600-8e21-11eb-98e5-ebf55a45785f.png)
