@@ -14,10 +14,9 @@ import {useInvoiceForm} from './useInvoiceForm';
 
 const InvoiceForm = ({ fetchCompanyData }) => {
   const { onSubmit,companyData } = useInvoiceForm({fetchCompanyData, initialInvoice});
-
   return (
     <Formik
-      initialValues={{...initialInvoice,...companyData}}
+      initialValues={{ ...initialInvoice, ...companyData }}
       enableReinitialize
       validationSchema={validationInvoice}
       onSubmit={onSubmit}
@@ -31,8 +30,8 @@ const InvoiceForm = ({ fetchCompanyData }) => {
             <h3>Buyer</h3>
             <BuyerInputForm errors={errors} touched={touched} />
             <Box>
-              <p>Payment method:</p>
-              <p>Bank account number:</p>
+              <p>Payment method: {companyData.paymentMethod}</p>
+              <p>Bank account number: {companyData.accountNumber}</p>
             </Box>
             <Box>
               <DynamicProductInputs

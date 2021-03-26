@@ -176,6 +176,6 @@
       "NIP": "123"
     },
     "accountNumber": "12345",
-    "paymentMethod": "cash"
+    "paymentMethod": "transfer"
   }
 }

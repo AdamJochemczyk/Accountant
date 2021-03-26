@@ -25,7 +25,7 @@ const Documents = () => {
           >
             {({ errors, touched }) => (
               <Form>
-                <Box display="flex" justifyContent="space-between">
+                <Box display="flex" justifyContent="space-between" flexDirection="column">
                   <Field
                     name={`companyName`}
                     type="text"
@@ -46,7 +46,7 @@ const Documents = () => {
         </Paper>
       </Box>
       {company && (
-        <Box>
+        <Box style={{width: "300px"}}>
           <Paper elevation={2}>
             Results for: {company}
             <Box>

@@ -15,7 +15,7 @@ const NewInvoice = () => {
   )
 
   return (
-    <Box display="flex" justifyContent="center" m={3}>
+    <Box display="flex" justifyContent="center" m={3} style={{width:"290px"}}>
       <Paper elevation={3}>
           <p>Choose type of invoice: </p>
           <select onChange={onChange}>

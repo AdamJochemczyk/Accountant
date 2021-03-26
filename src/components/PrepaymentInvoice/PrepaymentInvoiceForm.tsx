@@ -16,7 +16,7 @@ const PrepaymentInvoice = ({ fetchCompanyData }) => {
 
   return (
     <Formik
-      initialValues={{...initialPrepaymentInvoice,...companyData}}
+      initialValues={{ ...initialPrepaymentInvoice, ...companyData }}
       enableReinitialize
       validationSchema={validationPrepaymentInvoice}
       onSubmit={onSubmit}
@@ -30,8 +30,8 @@ const PrepaymentInvoice = ({ fetchCompanyData }) => {
             <h3>Buyer</h3>
             <BuyerInputForm errors={errors} touched={touched} />
             <Box>
-              <p>Payment method:</p>
-              <p>Bank account number:</p>
+              <p>Payment method: {companyData.paymentMethod}</p>
+              <p>Bank account number: {companyData.accountNumber}</p>
             </Box>
           </div>
           <Box display="flex" flexDirection="column">

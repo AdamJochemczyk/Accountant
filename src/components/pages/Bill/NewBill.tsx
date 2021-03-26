@@ -19,7 +19,7 @@ const NewBill = ({ fetchCompanyData }) => {
   const {onSubmit,companyData}=useNewBill({fetchCompanyData,initialBill})
 
   return (
-    <Box display="flex" justifyContent="center" m={3}>
+    <Box display="flex" justifyContent="center" m={3} style={{width: "290px"}}>
       <Paper elevation={3}>
         <Box p={1}>
           <Formik
