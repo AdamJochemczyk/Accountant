@@ -60,14 +60,14 @@
         "NIP": "123"
       },
       "buyer": {
-        "name": "aaa",
+        "name": "tester",
         "address": "123",
         "NIP": "2222"
       },
-      "prepayment": "1000",
+      "prepayment": "11",
       "accountNumber": "12345",
       "paymentMethod": "cash",
-      "id": 2
+      "id": 4
     },
     {
       "seller": {
@@ -76,14 +76,14 @@
         "NIP": "123"
       },
       "buyer": {
-        "name": "aaa",
+        "name": "tester",
         "address": "123",
         "NIP": "2222"
       },
-      "prepayment": "2500",
+      "prepayment": "11",
       "accountNumber": "12345",
       "paymentMethod": "cash",
-      "id": 3
+      "id": 5
     }
   ],
   "invoices": [
@@ -134,6 +134,30 @@
       "accountNumber": "12345",
       "paymentMethod": "cash",
       "id": 2
+    },
+    {
+      "seller": {
+        "name": "Adamiec Sp. z o.o.",
+        "address": "233",
+        "NIP": "123"
+      },
+      "buyer": {
+        "name": "aaa",
+        "address": "123",
+        "NIP": "2222"
+      },
+      "accountNumber": "12345",
+      "paymentMethod": "transfer",
+      "numberOfProducts": "1",
+      "products": [
+        {
+          "name": "Total rest to pay",
+          "amount": "1",
+          "tax": "23",
+          "price": 0
+        }
+      ],
+      "id": 3
     }
   ],
   "companyData": {

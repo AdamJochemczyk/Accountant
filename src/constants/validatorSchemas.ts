@@ -76,3 +76,10 @@ export const validationLogin = Yup.object().shape({
   email: Yup.string().required("Email is required"),
   password: Yup.string().required("Password is required"),
 })
+
+export const validationFinalInvoice = Yup.object().shape({
+  ...sellerValidator.fields,
+  ...buyerValidator.fields,
+  paymentMethod: Yup.string().required("Payment method is required"),
+  rest: Yup.number().required("Rest to pay is required")
+});

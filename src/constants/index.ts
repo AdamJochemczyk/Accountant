@@ -14,6 +14,7 @@ export {
   buyerValidator,
   productsValidator,
   validationLogin,
+  validationFinalInvoice,
 } from "./validatorSchemas";
 export {
   setCookie,
